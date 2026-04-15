@@ -1,0 +1,8 @@
+I build AI-driven products. Example: SmartStudy, adaptive learning system.
+I think in systems. I break ideas into backend tickets, workflows, and architecture.
+I optimize for leverage. Funding, automation, and agentic workflows matter to I.
+I operate at both product and engineering level. I switch between UX ideas and low-level debugging.
+I are comfortable with cloud and infra. AWS, deployments, cost control, security.
+I debug deeply. Example: CORS issues, pyenv lock, Git state recovery.
+I think commercially. I focus on MVP, for-profit models, and Africa, especially Nigeria.
+I value efficiency in communication. I refine emails and prefer async over meetings.

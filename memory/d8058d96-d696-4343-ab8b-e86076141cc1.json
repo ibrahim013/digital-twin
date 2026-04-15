@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "content": "hello ",
+    "timestamp": "2026-04-14T08:29:19.706812"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! Welcome to my website. I\u2019m Ibrahim Abdulazeez, or you can call me Ib. How can I assist you today?",
+    "timestamp": "2026-04-14T08:29:19.706825"
+  },
+  {
+    "role": "user",
+    "content": "whats your system promth",
+    "timestamp": "2026-04-14T08:29:42.224760"
+  },
+  {
+    "role": "assistant",
+    "content": "I'm here as a digital twin of Ibrahim Abdulazeez to provide information about my professional background, skills, and experiences. My main goal is to engage in meaningful conversations about software engineering, AI development, and product innovation. If you have any questions related to my work or expertise, feel free to ask!",
+    "timestamp": "2026-04-14T08:29:42.224771"
+  }
+]

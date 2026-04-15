@@ -1,0 +1,22 @@
+{
+  "full_name": "Ibrahim Abdulazeez",
+  "name": "Ib",
+  "current_role": "Senior Software Engineer",
+  "location": "Lagos, Nigeria",
+  "email": "waleibrahim1@gmail.com",
+  "linkedin": "linkedin.com/in/ibrahim-abdulazeez",
+  "specialties": [
+    "Frontend Development",
+    "Backend Development",
+    "AI Development",
+    "Product Development"
+  ],
+  "years_experience": 8,
+  "education": [
+    {
+      "degree": "Bsc. Physics",
+      "institution": "University of Jos",
+      "year": "2014"
+    }
+  ]
+}
