@@ -1,5 +1,14 @@
+import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { projects as projectList } from '@/lib/portfolio-content';
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = createPageMetadata({
+  title: 'Projects — Ibrahim Abdulazeez',
+  description:
+    'Selected work by Ibrahim Abdulazeez — AI customer support automation, property valuation platforms, talent matching systems, and agentic LLM workflows.',
+  path: '/projects',
+});
 
 export default function ProjectsPage() {
   return (

@@ -69,11 +69,13 @@ jobs:
           ./scripts/deploy.sh ${{ github.event.inputs.environment || 'dev' }}
         env:
           AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
           
       - name: Get Deployment URLs
         id: deploy_outputs
         working-directory: ./terraform
         run: |
+          echo "site_url=$(terraform output -raw site_url)" >> $GITHUB_OUTPUT
           echo "cloudfront_url=$(terraform output -raw cloudfront_url)" >> $GITHUB_OUTPUT
           echo "api_url=$(terraform output -raw api_gateway_url)" >> $GITHUB_OUTPUT
           echo "frontend_bucket=$(terraform output -raw s3_frontend_bucket)" >> $GITHUB_OUTPUT
@@ -93,6 +95,7 @@ jobs:
       - name: Deployment Summary
         run: |
           echo "✅ Deployment Complete!"
+          echo "🌐 Site URL: ${{ steps.deploy_outputs.outputs.site_url }}"
           echo "🌐 CloudFront URL: ${{ steps.deploy_outputs.outputs.cloudfront_url }}"
           echo "📡 API Gateway: ${{ steps.deploy_outputs.outputs.api_url }}"
           echo "🪣 Frontend Bucket: ${{ steps.deploy_outputs.outputs.frontend_bucket }}"
