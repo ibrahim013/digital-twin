@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   certifications,
@@ -6,6 +7,14 @@ import {
   site,
   skills,
 } from '@/lib/portfolio-content';
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = createPageMetadata({
+  title: 'About — Ibrahim Abdulazeez',
+  description:
+    'Learn about Ibrahim Abdulazeez — 8+ years building AI-driven products, scalable frontend architecture, LLM workflows, and cloud infrastructure. Experience at TalentUp Africa, Modus Create, and Andela.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (

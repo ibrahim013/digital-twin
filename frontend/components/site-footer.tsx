@@ -13,7 +13,7 @@ export default function SiteFooter() {
           </div>
           <div className="h-4 w-px bg-border-subtle hidden md:block" />
           <p className="font-mono text-[10px] text-text-muted uppercase tracking-widest">
-            System Build © 2024
+            System Build © {new Date().getFullYear()}
           </p>
         </div>
         <nav className="flex flex-wrap justify-center gap-6 font-mono text-[11px] uppercase tracking-wider">
@@ -42,7 +42,7 @@ export default function SiteFooter() {
         </nav>
       </div>
       <p className="text-center font-mono text-[10px] text-text-muted uppercase tracking-widest pb-6">
-        © 2024 Ibrahim Abdulazeez. All rights reserved.
+        © {new Date().getFullYear()} Ibrahim Abdulazeez. All rights reserved.
       </p>
     </footer>
   );

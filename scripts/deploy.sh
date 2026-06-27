@@ -35,14 +35,19 @@ echo "🎯 Applying Terraform..."
 
 API_URL=$(terraform output -raw api_gateway_url)
 FRONTEND_BUCKET=$(terraform output -raw s3_frontend_bucket)
-CUSTOM_URL=$(terraform output -raw custom_domain_url 2>/dev/null || true)
+SITE_URL=$(terraform output -raw site_url)
 
 # 3. Build + deploy frontend
 cd ../frontend
 
-# Create production environment file with API URL
-echo "📝 Setting API URL for production..."
-echo "NEXT_PUBLIC_API_URL=$API_URL" > .env.production
+# Create production environment file
+echo "📝 Setting production environment..."
+
+cat > .env.production <<EOF
+NEXT_PUBLIC_API_URL=$API_URL
+NEXT_PUBLIC_SITE_URL=$SITE_URL
+NEXT_PUBLIC_GA_MEASUREMENT_ID=${NEXT_PUBLIC_GA_MEASUREMENT_ID:-}
+EOF
 
 npm install
 npm run build
@@ -51,8 +56,6 @@ cd ..
 
 # 4. Final messages
 echo -e "\n✅ Deployment complete!"
-echo "🌐 CloudFront URL : $(terraform -chdir=terraform output -raw cloudfront_url)"
-if [ -n "$CUSTOM_URL" ]; then
-  echo "🔗 Custom domain  : $CUSTOM_URL"
-fi
-echo "📡 API Gateway    : $API_URL"
+echo "🌐 Site URL        : $SITE_URL"
+echo "🌐 CloudFront URL  : $(terraform -chdir=terraform output -raw cloudfront_url)"
+echo "📡 API Gateway     : $API_URL"

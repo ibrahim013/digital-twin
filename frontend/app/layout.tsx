@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
 import { Hanken_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import GoogleAnalytics from '@/components/google-analytics';
+import JsonLd from '@/components/json-ld';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
+import { createPageMetadata, defaultDescription, defaultTitle } from '@/lib/seo';
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: '--font-hanken',
@@ -22,11 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '700'],
 });
 
-export const metadata: Metadata = {
-  title: 'Ibrahim — Digital Twin Command Center',
-  description:
-    'Portfolio of Ibrahim Abdulazeez — Senior Software Engineer & AI Engineer. Chat with the Digital Twin.',
-};
+export const metadata = createPageMetadata({
+  title: defaultTitle,
+  description: defaultDescription,
+  path: '/',
+});
 
 export default function RootLayout({
   children,
@@ -39,6 +41,8 @@ export default function RootLayout({
       className={`dark ${hankenGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
+        <JsonLd />
+        <GoogleAnalytics />
         <div className="grid-bg" />
         <SiteHeader />
         <div className="flex-1">{children}</div>

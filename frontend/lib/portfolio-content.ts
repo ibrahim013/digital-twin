@@ -8,7 +8,6 @@ export const site = {
   location: 'Lagos, Nigeria',
   linkedin: 'https://linkedin.com/in/ibrahim-abdulazeez',
   github: 'https://github.com/ibrahim013',
-  twitter: 'https://twitter.com',
   aboutHero: 'Architecting Digital Experiences.',
   aboutIntro:
     'I build AI-driven products and scalable systems, from frontend architecture to LLM workflows and cloud infrastructure. I operate at both product and engineering level, optimizing for leverage, execution speed, and practical outcomes.',

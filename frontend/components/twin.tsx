@@ -203,7 +203,7 @@ export default function Twin() {
                 ) : hasAvatar ? (
                   <img
                     src="/avatar.png"
-                    alt=""
+                    alt="Ibrahim Digital Twin avatar"
                     className="w-full h-full object-cover rounded"
                   />
                 ) : (
