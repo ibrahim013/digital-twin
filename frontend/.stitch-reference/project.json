@@ -1,0 +1,424 @@
+{
+  "name": "projects/13428199571635439967",
+  "title": "Ibrahim Portfolio Redesign",
+  "visibility": "PUBLIC",
+  "createTime": "2026-06-26T19:01:45.181022Z",
+  "updateTime": "2026-06-26T20:53:11.425548Z",
+  "projectType": "TEXT_TO_UI_PRO",
+  "thumbnailScreenshot": {
+    "name": "projects/13428199571635439967/files/f23b19984a84443cb4973d19b53cf451",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AP1WRLvbSvBsRNY-x8zwzyDQH3Bh_EAutPwENQqmJLY1Hs_kuHlG6WulYATlU6dTN5Q-_xHL1ewiQoBI4CFTl-lNDG5CDq2qgj98hZebrwoMWwDX40hSHrKnW-u0P7N9rX2WwXjIWENLAPsaSR14EaSMADYzEqNuj9Hg5ngg_ouRoW-selqyiWbtDcqOtFtIHQozOaT8nOBgI3Izl5oDYq7Ci0rcUJkG7zzc5AXMdYqFfkLl2dpVCSXHiR0vrQI6"
+  },
+  "origin": "STITCH",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "DARK",
+    "font": "HANKEN_GROTESK",
+    "roundness": "ROUND_FOUR",
+    "customColor": "#6366f1",
+    "headlineFont": "HANKEN_GROTESK",
+    "bodyFont": "INTER",
+    "labelFont": "JETBRAINS_MONO",
+    "namedColors": {
+      "background": "#0b1326",
+      "border-subtle": "#334155",
+      "error": "#ffb4ab",
+      "error_container": "#93000a",
+      "inverse_on_surface": "#283044",
+      "inverse_primary": "#494bd6",
+      "inverse_surface": "#dae2fd",
+      "on_background": "#dae2fd",
+      "on_error": "#690005",
+      "on_error_container": "#ffdad6",
+      "on_primary": "#1000a9",
+      "on_primary_container": "#0d0096",
+      "on_primary_fixed": "#07006c",
+      "on_primary_fixed_variant": "#2f2ebe",
+      "on_secondary": "#490080",
+      "on_secondary_container": "#d6a9ff",
+      "on_secondary_fixed": "#2c0051",
+      "on_secondary_fixed_variant": "#6900b3",
+      "on_surface": "#dae2fd",
+      "on_surface_variant": "#c7c4d7",
+      "on_tertiary": "#2d3133",
+      "on_tertiary_container": "#272a2c",
+      "on_tertiary_fixed": "#191c1e",
+      "on_tertiary_fixed_variant": "#444749",
+      "outline": "#908fa0",
+      "outline_variant": "#464554",
+      "primary": "#c0c1ff",
+      "primary_container": "#8083ff",
+      "primary_fixed": "#e1e0ff",
+      "primary_fixed_dim": "#c0c1ff",
+      "secondary": "#ddb7ff",
+      "secondary_container": "#6f00be",
+      "secondary_fixed": "#f0dbff",
+      "secondary_fixed_dim": "#ddb7ff",
+      "surface": "#0b1326",
+      "surface-card": "#1E293B",
+      "surface-deep": "#020617",
+      "surface_bright": "#31394d",
+      "surface_container": "#171f33",
+      "surface_container_high": "#222a3d",
+      "surface_container_highest": "#2d3449",
+      "surface_container_low": "#131b2e",
+      "surface_container_lowest": "#060e20",
+      "surface_dim": "#0b1326",
+      "surface_tint": "#c0c1ff",
+      "surface_variant": "#2d3449",
+      "tertiary": "#c4c7c9",
+      "tertiary_container": "#8e9193",
+      "tertiary_fixed": "#e0e3e5",
+      "tertiary_fixed_dim": "#c4c7c9",
+      "text-muted": "#94A3B8"
+    },
+    "designMd": "---\nname: Obsidian Portfolio\ncolors:\n  surface: '#0b1326'\n  surface-dim: '#0b1326'\n  surface-bright: '#31394d'\n  surface-container-lowest: '#060e20'\n  surface-container-low: '#131b2e'\n  surface-container: '#171f33'\n  surface-container-high: '#222a3d'\n  surface-container-highest: '#2d3449'\n  on-surface: '#dae2fd'\n  on-surface-variant: '#c7c4d7'\n  inverse-surface: '#dae2fd'\n  inverse-on-surface: '#283044'\n  outline: '#908fa0'\n  outline-variant: '#464554'\n  surface-tint: '#c0c1ff'\n  primary: '#c0c1ff'\n  on-primary: '#1000a9'\n  primary-container: '#8083ff'\n  on-primary-container: '#0d0096'\n  inverse-primary: '#494bd6'\n  secondary: '#ddb7ff'\n  on-secondary: '#490080'\n  secondary-container: '#6f00be'\n  on-secondary-container: '#d6a9ff'\n  tertiary: '#c4c7c9'\n  on-tertiary: '#2d3133'\n  tertiary-container: '#8e9193'\n  on-tertiary-container: '#272a2c'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#e1e0ff'\n  primary-fixed-dim: '#c0c1ff'\n  on-primary-fixed: '#07006c'\n  on-primary-fixed-variant: '#2f2ebe'\n  secondary-fixed: '#f0dbff'\n  secondary-fixed-dim: '#ddb7ff'\n  on-secondary-fixed: '#2c0051'\n  on-secondary-fixed-variant: '#6900b3'\n  tertiary-fixed: '#e0e3e5'\n  tertiary-fixed-dim: '#c4c7c9'\n  on-tertiary-fixed: '#191c1e'\n  on-tertiary-fixed-variant: '#444749'\n  background: '#0b1326'\n  on-background: '#dae2fd'\n  surface-variant: '#2d3449'\n  surface-deep: '#020617'\n  surface-card: '#1E293B'\n  text-muted: '#94A3B8'\n  border-subtle: '#334155'\ntypography:\n  display-lg:\n    fontFamily: Hanken Grotesk\n    fontSize: 72px\n    fontWeight: '800'\n    lineHeight: 80px\n    letterSpacing: -0.04em\n  display-lg-mobile:\n    fontFamily: Hanken Grotesk\n    fontSize: 40px\n    fontWeight: '800'\n    lineHeight: 48px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Hanken Grotesk\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 40px\n  headline-md:\n    fontFamily: Hanken Grotesk\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 18px\n    fontWeight: '400'\n    lineHeight: 28px\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  label-md:\n    fontFamily: JetBrains Mono\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n    letterSpacing: 0.05em\n  label-sm:\n    fontFamily: JetBrains Mono\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\n    letterSpacing: 0.1em\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  base: 8px\n  container-max: 1280px\n  gutter: 24px\n  margin-desktop: 64px\n  margin-mobile: 20px\n---\n\n## Brand & Style\n\nThe design system is engineered to project a professional, high-end technical persona. It targets a sophisticated audience within the tech and creative industries, evoking a sense of precision, reliability, and modern craftsmanship. \n\nThe design style is **Corporate Modern with a Minimalist Dark-Mode core**. It prioritizes extreme clarity through high-contrast typography and generous whitespace, punctuated by vibrant technical accents. Layouts should feel structural and architectural, using light and shadow not for skeuomorphism, but to define \"digital layers\" of information. The aesthetic is clean, sharp, and intentional\u2014designed to showcase high-quality work without distracting from it.\n\n## Colors\n\nThe color palette is built on a \"True Dark\" foundation. The primary background (`surface-deep`) is a near-black, providing the highest possible contrast for the secondary and tertiary colors. \n\n- **Primary & Secondary:** A soft indigo and vibrant purple are used exclusively for interactive elements, data visualization, and brand highlights. These colors should feel luminous against the dark background.\n- **Neutrals:** We utilize a range of slate-grays (`#1E293B`, `#334155`) to define hierarchy and surface elevation. \n- **Typography:** Pure white (`#FFFFFF`) is reserved for headlines and critical information, while `#F8FAFC` and `#94A3B8` provide hierarchical steps for body text and metadata.\n\n## Typography\n\nThis design system uses a triple-font strategy to balance impact, readability, and technical flair.\n\n1.  **Hanken Grotesk (Headlines):** Used for high-impact displays. It features a modern, sharp geometric construction that feels contemporary and precise.\n2.  **Inter (Body):** The workhorse for all long-form content. It is highly legible on digital screens and maintains a neutral, professional tone.\n3.  **JetBrains Mono (Labels/Technical):** Used for metadata, tags, and small captions. The monospaced nature reinforces the \"tech-driven\" aesthetic and adds a layer of structural detail.\n\nAll large typography (Display and Headline LG) should utilize negative letter-spacing to appear tighter and more professional.\n\n## Layout & Spacing\n\nThe layout utilizes a **12-column Fluid Grid** system with a fixed maximum width for large displays to ensure readability. \n\n- **Vertical Rhythm:** Built on an 8px base unit. All margins and paddings must be multiples of 8 (8, 16, 24, 32, 48, 64, 128).\n- **Whitespace:** Emphasize generous section spacing (minimum 128px between major content blocks on desktop) to allow the portfolio items to breathe.\n- **Reflow:** On mobile devices, the 12-column grid collapses to a single column with 20px side margins. Elements that span 6 columns on desktop should stack vertically on mobile.\n\n## Elevation & Depth\n\nHierarchy is established through **Tonal Layering** rather than heavy shadows. \n\n- **Level 0 (Base):** `#020617` (The background canvas).\n- **Level 1 (Cards/Sections):** `#0F172A` (Subtle lift from the background).\n- **Level 2 (Interactions):** `#1E293B` (Used for hover states or floating menus).\n- **Glassmorphism:** Navigation bars and overlays should use a background blur (12px to 20px) with a semi-transparent `#0F172A` fill (80% opacity) and a 1px border of `#334155` to simulate a technical, translucent glass effect.\n- **Accents:** Use thin, 1px borders for cards and containers to maintain a crisp, sharp-edged look without relying on deep shadows.\n\n## Shapes\n\nThe shape language is **Soft and Precise**. We use a conservative `0.25rem` (4px) base corner radius for most UI components (buttons, input fields). Larger containers like cards may scale up to `0.75rem` (12px) to feel more approachable.\n\nAvoid fully rounded \"pill\" shapes unless used for small tags or chips. The goal is to maintain a professional, architectural feel through defined corners while avoiding the harshness of a \"Sharp\" 0px radius.\n\n## Components\n\n- **Buttons:** Primary buttons use the Indigo-to-Purple gradient or solid Indigo. Text should be uppercase `Label-MD`. Hover states should include a subtle glow effect using a low-opacity primary color shadow.\n- **Cards:** Cards should have a 1px border (`#334155`) and no shadow. The background should be `#0F172A`. On hover, the border color should shift to the primary indigo.\n- **Chips/Tags:** Use the `JetBrains Mono` font. Style with a dark background (`#1E293B`) and a subtle border.\n- **Input Fields:** Backgrounds should be darker than the container they sit in. Use a primary color 2px bottom border or full border on focus.\n- **Lists:** Use subtle horizontal dividers (`#1E293B`) between list items. Icons should be monochrome (white or light gray) unless they are interactive.\n- **Navigation:** The sticky header must use the glassmorphism effect described in the Elevation section to keep the content visible as it scrolls underneath.",
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#6366f1",
+    "overrideSecondaryColor": "#a855f7",
+    "overrideTertiaryColor": "#f8fafc",
+    "overrideNeutralColor": "#0f172a",
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "28px"
+      },
+      "body-md": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "display-lg": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "72px",
+        "fontWeight": "800",
+        "lineHeight": "80px",
+        "letterSpacing": "-0.04em"
+      },
+      "display-lg-mobile": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "40px",
+        "fontWeight": "800",
+        "lineHeight": "48px",
+        "letterSpacing": "-0.02em"
+      },
+      "headline-lg": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "lineHeight": "40px"
+      },
+      "headline-md": {
+        "fontFamily": "Hanken Grotesk",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "lineHeight": "32px"
+      },
+      "label-md": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "0.05em"
+      },
+      "label-sm": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "16px",
+        "letterSpacing": "0.1em"
+      }
+    },
+    "spacing": {
+      "base": "8px",
+      "container-max": "1280px",
+      "gutter": "24px",
+      "margin-desktop": "64px",
+      "margin-mobile": "20px"
+    },
+    "headlineFontFamily": "Hanken Grotesk",
+    "bodyFontFamily": "Inter",
+    "labelFontFamily": "Jetbrains Mono"
+  },
+  "screenInstances": [
+    {
+      "id": "0a860555698a4b76b131d1e7457d797f",
+      "sourceScreen": "projects/13428199571635439967/screens/0a860555698a4b76b131d1e7457d797f",
+      "x": 10112,
+      "y": 856,
+      "width": 1280,
+      "height": 1097,
+      "hidden": true
+    },
+    {
+      "id": "0b5c8ec4c98f40ca83d79e621198d585",
+      "sourceScreen": "projects/13428199571635439967/screens/0b5c8ec4c98f40ca83d79e621198d585",
+      "x": 8792,
+      "y": 865,
+      "width": 1280,
+      "height": 1210
+    },
+    {
+      "id": "0bf00ac0-3103-457e-be43-5832922c9c13",
+      "sourceScreen": "projects/13428199571635439967/screens/13021068337300613460",
+      "y": 3558,
+      "width": 512,
+      "height": 725,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "105a8a3d5ca54a70a229d692c617ee06",
+      "sourceScreen": "projects/13428199571635439967/screens/105a8a3d5ca54a70a229d692c617ee06",
+      "x": 2368,
+      "y": 856,
+      "width": 1280,
+      "height": 1024,
+      "hidden": true
+    },
+    {
+      "id": "11282497-beed-4176-b3ec-160c459f7865",
+      "sourceScreen": "projects/13428199571635439967/screens/13021068337300611526",
+      "x": 576,
+      "y": 3558,
+      "width": 512,
+      "height": 725,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "1773896f-6ddc-49e6-a441-598f37e1cdca",
+      "sourceScreen": "projects/13428199571635439967/screens/13021068337300613688",
+      "x": 1152,
+      "y": 3558,
+      "width": 512,
+      "height": 725,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "4a0d8907c48e488cb41511b7665fb9bc",
+      "sourceScreen": "projects/13428199571635439967/screens/4a0d8907c48e488cb41511b7665fb9bc",
+      "x": 10271,
+      "y": 865,
+      "width": 1280,
+      "height": 1839,
+      "label": "Projects - Ibrahim Portfolio",
+      "hidden": true
+    },
+    {
+      "id": "5d861658a9514a7183409895fdf269e5",
+      "sourceScreen": "projects/13428199571635439967/screens/5d861658a9514a7183409895fdf269e5",
+      "width": 600,
+      "height": 600
+    },
+    {
+      "id": "5e0bd985952a4d13b4576fee0cc4605c",
+      "sourceScreen": "projects/13428199571635439967/screens/5e0bd985952a4d13b4576fee0cc4605c",
+      "x": 2688,
+      "y": 6147,
+      "width": 1280,
+      "height": 1743,
+      "hidden": true
+    },
+    {
+      "id": "60f617349a7c4b31b277f74d79cb311d",
+      "sourceScreen": "projects/13428199571635439967/screens/60f617349a7c4b31b277f74d79cb311d",
+      "x": 11653,
+      "y": 828,
+      "width": 1280,
+      "height": 2446,
+      "hidden": true
+    },
+    {
+      "id": "626817f8c8f74e6a8cae42bcbd45d7db",
+      "sourceScreen": "projects/13428199571635439967/screens/626817f8c8f74e6a8cae42bcbd45d7db",
+      "x": 1344,
+      "y": 6147,
+      "width": 1280,
+      "height": 4612,
+      "hidden": true
+    },
+    {
+      "id": "638248f634614ff5ac1006efa1272540",
+      "sourceScreen": "projects/13428199571635439967/screens/638248f634614ff5ac1006efa1272540",
+      "x": 11508,
+      "y": 868,
+      "width": 1280,
+      "height": 5023,
+      "label": "About (Obsidian Portfolio) - Ibrahim Portfolio",
+      "hidden": true
+    },
+    {
+      "id": "6c9c3239-e2fc-4fc5-a8ce-f2def187c0bd",
+      "sourceScreen": "projects/13428199571635439967/screens/1414578828428119492",
+      "y": 4539,
+      "width": 512,
+      "height": 348,
+      "hidden": true,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "6cd0871d-f9cb-412a-941b-598b31420da3",
+      "sourceScreen": "projects/13428199571635439967/screens/2126288914578726698",
+      "x": 1152,
+      "y": 5143,
+      "width": 512,
+      "height": 725,
+      "hidden": true,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "73aca8d9b18c4660862ba3a6cd136239",
+      "sourceScreen": "projects/13428199571635439967/screens/73aca8d9b18c4660862ba3a6cd136239",
+      "x": 4032,
+      "y": 6147,
+      "width": 1280,
+      "height": 1577,
+      "hidden": true
+    },
+    {
+      "id": "75ded819cd8a4f9ebd69127d12e6875e",
+      "sourceScreen": "projects/13428199571635439967/screens/75ded819cd8a4f9ebd69127d12e6875e",
+      "y": 6147,
+      "width": 1280,
+      "height": 1117,
+      "hidden": true
+    },
+    {
+      "id": "7919cd33334a44a78b77b1eaec7d39b7",
+      "sourceScreen": "projects/13428199571635439967/screens/7919cd33334a44a78b77b1eaec7d39b7",
+      "x": 664,
+      "width": 200,
+      "height": 200
+    },
+    {
+      "id": "7b5cf5a0-e203-4e51-b553-9d5e99e97153",
+      "sourceScreen": "projects/13428199571635439967/screens/2126288914578724356",
+      "x": 576,
+      "y": 5143,
+      "width": 512,
+      "height": 725,
+      "hidden": true,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "7d4563abfb9744e9a0702affb6fd2729",
+      "sourceScreen": "projects/13428199571635439967/screens/7d4563abfb9744e9a0702affb6fd2729",
+      "x": 1024,
+      "y": 856,
+      "width": 1280,
+      "height": 2084,
+      "hidden": true
+    },
+    {
+      "id": "7f3a2000-dded-4671-a613-9f991c1f26ff",
+      "sourceScreen": "projects/13428199571635439967/screens/2126288914578726110",
+      "y": 5143,
+      "width": 512,
+      "height": 725,
+      "hidden": true,
+      "type": "SCREEN_INSTANCE"
+    },
+    {
+      "id": "8df8fa608aaa428b8426ad466cf173c5",
+      "sourceScreen": "projects/13428199571635439967/screens/8df8fa608aaa428b8426ad466cf173c5",
+      "x": 12872,
+      "y": 865,
+      "width": 1280,
+      "height": 1481
+    },
+    {
+      "id": "ad1101ee04174f81ac21ca2a6c16be25",
+      "sourceScreen": "projects/13428199571635439967/screens/ad1101ee04174f81ac21ca2a6c16be25",
+      "x": 10176,
+      "y": 865,
+      "width": 1280,
+      "height": 1823,
+      "label": "Projects (Emerald Precision) - Ibrahim Portfolio"
+    },
+    {
+      "id": "assets-13836351579931584718-1782501851702",
+      "x": 7760,
+      "width": 960,
+      "height": 540,
+      "hidden": true,
+      "sourceAsset": "assets/13836351579931584718",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets-15788226013888597606-1782501191027",
+      "x": 6416,
+      "width": 960,
+      "height": 540,
+      "hidden": true,
+      "sourceAsset": "assets/15788226013888597606",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_2c67da065ee948a5b109504dcf78d734",
+      "y": 856,
+      "width": 960,
+      "height": 540,
+      "hidden": true,
+      "sourceAsset": "assets/2c67da065ee948a5b109504dcf78d734",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "assets_53e3654e11a1416f9101b4d9d8336b2a",
+      "x": 6421,
+      "y": 886,
+      "width": 960,
+      "height": 540,
+      "sourceAsset": "assets/53e3654e11a1416f9101b4d9d8336b2a",
+      "type": "DESIGN_SYSTEM_INSTANCE"
+    },
+    {
+      "id": "c23000bfeda94ba99ebe1b8a434b7e77",
+      "sourceScreen": "projects/13428199571635439967/screens/c23000bfeda94ba99ebe1b8a434b7e77",
+      "x": 14341,
+      "y": 828,
+      "width": 1280,
+      "height": 2482,
+      "hidden": true
+    },
+    {
+      "id": "c55bdad61bf148b196422ca55cd0e30d",
+      "sourceScreen": "projects/13428199571635439967/screens/c55bdad61bf148b196422ca55cd0e30d",
+      "x": 7455,
+      "y": 865,
+      "width": 1280,
+      "height": 1210
+    },
+    {
+      "id": "c77df6da457c44859498d89e870729ab",
+      "sourceScreen": "projects/13428199571635439967/screens/c77df6da457c44859498d89e870729ab",
+      "x": 5056,
+      "y": 856,
+      "width": 1280,
+      "height": 1244,
+      "hidden": true
+    },
+    {
+      "id": "c9e173e6da3a4b72ac9a03ae50aa27c3",
+      "sourceScreen": "projects/13428199571635439967/screens/c9e173e6da3a4b72ac9a03ae50aa27c3",
+      "x": 3712,
+      "y": 856,
+      "width": 1280,
+      "height": 1024,
+      "hidden": true
+    },
+    {
+      "id": "fc4badbce9e4482ea909b2be2c835cc8",
+      "sourceScreen": "projects/13428199571635439967/screens/fc4badbce9e4482ea909b2be2c835cc8",
+      "x": 11501,
+      "y": 865,
+      "width": 1280,
+      "height": 4416
+    }
+  ],
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hello",
+    "timestamp": "2026-06-27T00:37:42.096266"
+  },
+  {
+    "role": "assistant",
+    "content": "### Hello!  \n\nIt\u2019s great to connect with you here on my website. I\u2019m Ibrahim Abdulazeez \u2014 you can call me Ib. I\u2019m a Senior Software Engineer and AI Engineer with over 9 years of experience building scalable, production-ready systems across frontend, backend, cloud, and AI-driven applications.  \n\nI currently operate out of Lagos, Nigeria, and I specialize in:\n\n- **AI Engineering**: LLM applications, agent workflows, RAG systems, vector databases, and productionizing AI features  \n- **Full-Stack Development**: React, TypeScript, Python, FastAPI, Node.js, and more  \n- **Cloud & DevOps**: AWS, GCP, CI/CD pipelines, and infrastructure optimization  \n- **Product & Technical Leadership**: Designing systems from concept to scale, mentoring teams, and delivering MVPs efficiently  \n\nYou\u2019ll see from my background that I\u2019ve led technical initiatives at companies like **TalentUp Africa**, **Modus Create**, and **Andela**, focusing on building AI-enhanced products, optimizing user engagement, and driving engineering excellence.\n\n### How can I help you today?  \nWhether you\u2019re curious about my experience with AI-driven products, system design, or how I approach solving technical challenges \u2014 I\u2019m happy to dive in.",
+    "timestamp": "2026-06-27T00:37:42.096291"
+  }
+]

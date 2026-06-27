@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import os
 from dotenv import load_dotenv
 from typing import Optional, List, Dict
@@ -26,14 +26,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize Bedrock client - see Q42 on https://edwarddonner.com/faq if the Region gives you problems
+
+AWS_REGION = os.getenv("DEFAULT_AWS_REGION", "us-east-1")
+
 bedrock_client = boto3.client(
-    service_name="bedrock-runtime", 
-    region_name=os.getenv("DEFAULT_AWS_REGION", "us-east-1")
+    service_name="bedrock-runtime",
+    region_name=AWS_REGION,
 )
 
-# Bedrock model selection - see Q42 on https://edwarddonner.com/faq for more
+ses_client = boto3.client("ses", region_name=AWS_REGION)
+
 BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "global.amazon.nova-2-lite-v1:0")
+CONTACT_TO_EMAIL = os.getenv("CONTACT_TO_EMAIL", "waleibrahim13@gmail.com")
+CONTACT_FROM_EMAIL = os.getenv("CONTACT_FROM_EMAIL", "")
 
 # Memory storage configuration
 USE_S3 = os.getenv("USE_S3", "false").lower() == "true"
@@ -60,6 +65,18 @@ class Message(BaseModel):
     role: str
     content: str
     timestamp: str
+
+
+class ContactRequest(BaseModel):
+    name: str = Field(..., min_length=1, max_length=200)
+    email: str = Field(..., min_length=3, max_length=254)
+    subject: str = Field(..., min_length=1, max_length=200)
+    message: str = Field(..., min_length=1, max_length=5000)
+
+
+class ContactResponse(BaseModel):
+    success: bool
+    message: str
 
 
 # Memory management functions
@@ -161,7 +178,7 @@ def call_bedrock(conversation: List[Dict], user_message: str) -> str:
 @app.get("/")
 async def root():
     return {
-        "message": "AI Digital Twin API (Powered by AWS Bedrock)",
+        "message": "Ibrahim Abdulazeez Digital Twin API (Powered by AWS Bedrock)",
         "memory_enabled": True,
         "storage": "S3" if USE_S3 else "local",
         "ai_model": BEDROCK_MODEL_ID
@@ -175,6 +192,48 @@ async def health_check():
         "use_s3": USE_S3,
         "bedrock_model": BEDROCK_MODEL_ID
     }
+
+
+def send_contact_email(request: ContactRequest) -> None:
+    if not CONTACT_FROM_EMAIL:
+        raise HTTPException(
+            status_code=500,
+            detail="Contact form is not configured (CONTACT_FROM_EMAIL missing)",
+        )
+
+    body = (
+        f"New portfolio contact form submission\n\n"
+        f"Name: {request.name}\n"
+        f"Email: {request.email}\n"
+        f"Subject: {request.subject}\n\n"
+        f"Message:\n{request.message}\n"
+    )
+
+    try:
+        ses_client.send_email(
+            Source=CONTACT_FROM_EMAIL,
+            Destination={"ToAddresses": [CONTACT_TO_EMAIL]},
+            ReplyToAddresses=[request.email],
+            Message={
+                "Subject": {"Data": f"[Portfolio Contact] {request.subject}"},
+                "Body": {"Text": {"Data": body}},
+            },
+        )
+    except ClientError as e:
+        print(f"SES error: {e}")
+        raise HTTPException(
+            status_code=502,
+            detail="Failed to send message. Please try again or email directly.",
+        )
+
+
+@app.post("/contact", response_model=ContactResponse)
+async def contact(request: ContactRequest):
+    send_contact_email(request)
+    return ContactResponse(
+        success=True,
+        message="Your message has been sent successfully.",
+    )
 
 
 @app.post("/chat", response_model=ChatResponse)
