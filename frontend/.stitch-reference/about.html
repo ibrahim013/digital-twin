@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Ibrahim</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#222a3d",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "on-secondary": "#490080",
+                        "error-container": "#93000a",
+                        "tertiary": "#c4c7c9",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "outline-variant": "#464554",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "surface-variant": "#2d3449",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary-fixed": "#07006c",
+                        "surface-container-low": "#131b2e",
+                        "on-tertiary": "#2d3133",
+                        "surface-tint": "#00f5d4",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#f0dbff",
+                        "on-primary": "#1000a9",
+                        "outline": "#908fa0",
+                        "surface-bright": "#31394d",
+                        "on-background": "#dae2fd",
+                        "tertiary-container": "#8e9193",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "secondary": "#ddb7ff",
+                        "on-tertiary-container": "#272a2c",
+                        "tertiary-fixed": "#e0e3e5",
+                        "secondary-container": "#6f00be",
+                        "on-secondary-container": "#d6a9ff",
+                        "surface-container-lowest": "#060e20",
+                        "background": "#0b1326",
+                        "inverse-primary": "#494bd6",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-fixed": "#2c0051",
+                        "surface": "#0b1326",
+                        "primary-fixed": "#e1e0ff",
+                        "on-primary-container": "#0d0096",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container": "#171f33",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary": "#00f5d4",
+                        "surface-dim": "#0b1326",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "text-muted": "#94A3B8",
+                        "primary-container": "#00f5d4",
+                        "border-subtle": "#334155",
+                        "on-surface": "#dae2fd",
+                        "surface-deep": "#020617",
+                        "surface-card": "#1E293B",
+                        "brand-teal": "#00f5d4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #0b1326; color: theme('colors.on-background'); font-family: 'Hanken Grotesk', sans-serif; }
+        .glass-nav { background: rgba(11, 19, 38, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid theme('colors.border-subtle'); }
+        .glass-card { background-color: theme('colors.surface-card'); border: 1px solid theme('colors.border-subtle'); }
+        .glass-card:hover { border-color: #00f5d4; transition: border-color 0.3s ease; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-xl text-brand-teal font-label-md text-label-md uppercase tracking-wider fixed top-0 w-full z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-[1280px] mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-on-surface hover:text-brand-teal transition-colors" href="#">IBRAHIM</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant hover:text-brand-teal transition-colors hover:bg-surface-container-high/50 transition-all duration-300 active:scale-95 px-3 py-2 rounded" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-brand-teal transition-colors hover:bg-surface-container-high/50 transition-all duration-300 active:scale-95 px-3 py-2 rounded" href="#">Projects</a>
+<a class="text-brand-teal border-b-2 border-brand-teal pb-1 px-3 py-2" href="#">About</a>
+<a class="text-on-surface-variant hover:text-brand-teal transition-colors hover:bg-surface-container-high/50 transition-all duration-300 active:scale-95 px-3 py-2 rounded" href="#">Contact</a>
+</div>
+<button class="bg-brand-teal/10 text-brand-teal hover:bg-brand-teal/20 border border-brand-teal/30 px-6 py-2 rounded transition-all duration-300 active:scale-95 hidden md:block">Let's Talk</button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-32 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 space-y-8">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-brand-teal">
+                Architecting Digital Experiences.
+            </h1>
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl">
+                Senior Software Engineer and AI Engineer with 9+ years of experience building production systems across frontend, backend, cloud, and AI-enabled applications. Recent specialization includes LLM applications, agent workflows, retrieval systems, and deploying AI features into production environments.
+            </p>
+<div class="flex flex-wrap gap-4">
+<span class="bg-surface-card border border-border-subtle text-brand-teal font-label-sm text-label-sm px-3 py-1 rounded">AI ENGINEERING</span>
+<span class="bg-surface-card border border-border-subtle text-brand-teal font-label-sm text-label-sm px-3 py-1 rounded">FRONTEND</span>
+<span class="bg-surface-card border border-border-subtle text-brand-teal font-label-sm text-label-sm px-3 py-1 rounded">BACKEND &amp; CLOUD</span>
+</div>
+</div>
+<div class="md:col-span-5 flex justify-center md:justify-end">
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 border border-border-subtle bg-surface-container-low">
+<img alt="Ibrahim Avatar" class="w-full h-full object-cover rounded-full mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvbSvBsRNY-x8zwzyDQH3Bh_EAutPwENQqmJLY1Hs_kuHlG6WulYATlU6dTN5Q-_xHL1ewiQoBI4CFTl-lNDG5CDq2qgj98hZebrwoMWwDX40hSHrKnW-u0P7N9rX2WwXjIWENLAPsaSR14EaSMADYzEqNuj9Hg5ngg_ouRoW-selqyiWbtDcqOtFtIHQozOaT8nOBgI3Izl5oDYq7Ci0rcUJkG7zzc5AXMdYqFfkLl2dpVCSXHiR0vrQI6">
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="mb-32">
+<h2 class="font-headline-lg text-headline-lg text-brand-teal mb-16 border-b border-border-subtle pb-4">Experience</h2>
+<div class="space-y-8">
+<div class="glass-card p-8 rounded-lg flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">2023 — 2026</p>
+</div>
+<div class="md:w-3/4 space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Senior Frontend Engineer</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">TalentUp Africa</p>
+<ul class="list-disc pl-5 font-body-md text-body-md text-text-muted space-y-2">
+<li class="">Led frontend delivery across multiple product streams and improved candidate-to-employer matching efficiency by 35%.</li>
+<li class="">Introduced AI-enabled candidate evaluation workflows and improved screening accuracy by 40%.</li>
+<li class="">Improved recommendation and matching performance by 30% through AI-assisted decision systems.</li>
+<li class="">Designed scalable frontend architecture that supported 50% growth in concurrent platform usage.</li>
+<li class="">Partnered with product and design leadership to improve engagement metrics by 25%.</li>
+<li class="">Mentored junior engineers and introduced engineering standards that reduced review cycles by 20%.</li>
+<li class="">Participated in technical planning, architecture decisions, and roadmap execution.</li>
+</ul>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">2021 — 2023</p>
+</div>
+<div class="md:w-3/4 space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Frontend Engineer</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Modus Create</p>
+<ul class="list-disc pl-5 font-body-md text-body-md text-text-muted space-y-2">
+<li class="">Built production features for large-scale property valuation and research workflows.</li>
+<li class="">Developed React applications integrated with mapping and valuation services.</li>
+<li class="">Improved property data quality by 30%.</li>
+<li class="">Increased platform engagement by 25%.</li>
+<li class="">Introduced testing and deployment improvements that reduced production defects by 40%.</li>
+<li class="">Collaborated across engineering, design, and product teams to deliver ahead of schedule.</li>
+</ul>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">2017 — 2020</p>
+</div>
+<div class="md:w-3/4 space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Software Engineer</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Andela Talent Accelerator</p>
+<ul class="list-disc pl-5 font-body-md text-body-md text-text-muted space-y-2">
+<li class="">Delivered healthcare collaboration features supporting 500+ practitioners and patients.</li>
+<li class="">Built 15+ production features across frontend and backend systems.</li>
+<li class="">Improved user engagement by 30%.</li>
+<li class="">Implemented automated testing and reduced defects by 25%.</li>
+<li class="">Automated deployment workflows and reduced release cycles by 40%.</li>
+<li class="">Contributed to technical planning and team delivery practices.</li>
+</ul>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">2014 — 2017</p>
+</div>
+<div class="md:w-3/4 space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Lead Technical Instructor</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Waifanet Solution</p>
+<ul class="list-disc pl-5 font-body-md text-body-md text-text-muted space-y-2">
+<li class="">Designed and delivered a comprehensive coding curriculum for 300+ Nigerian graduates.</li>
+<li class="">Led technical workshops on emerging technologies, increasing team technical proficiency.</li>
+<li class="">Created Microsoft Office training modules for 100+ employees.</li>
+<li class="">Mentored junior instructors and established training best practices.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Bento Grid -->
+<section class="mb-32">
+<h2 class="font-headline-lg text-headline-lg text-brand-teal mb-16 border-b border-border-subtle pb-4">Technical Arsenal</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-8 rounded-lg space-y-6">
+<span class="material-symbols-outlined text-brand-teal text-4xl" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">AI Engineering</h3>
+<ul class="space-y-3 font-body-md text-body-md text-text-muted">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>LLM application development</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>RAG</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Prompt engineering</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Agent-based architectures</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Multi-agent orchestration</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Vector databases</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>LangChain</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>AutoGen</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>AI observability</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>LLM evaluation</li>
+</ul>
+</div>
+<div class="glass-card p-8 rounded-lg space-y-6">
+<span class="material-symbols-outlined text-brand-teal text-4xl" style="font-variation-settings: 'FILL' 1;">code</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Frontend</h3>
+<ul class="space-y-3 font-body-md text-body-md text-text-muted">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>React</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Next.js</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Redux</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>TypeScript</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Tailwind CSS</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>HTML5</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>CSS3</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>JavaScript (ES6+)</li>
+</ul>
+</div>
+<div class="glass-card p-8 rounded-lg space-y-6">
+<span class="material-symbols-outlined text-brand-teal text-4xl" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Backend &amp; Cloud</h3>
+<ul class="space-y-3 font-body-md text-body-md text-text-muted">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Node.js</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Express</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>Python</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>FastAPI</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>AWS</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>GCP</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>GraphQL</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-teal"></span>PostgreSQL</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Education -->
+<section class="mb-32">
+<h2 class="font-headline-lg text-headline-lg text-brand-teal mb-16 border-b border-border-subtle pb-4">Education</h2>
+<div class="glass-card p-8 rounded-lg flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">06/2011 — 2014</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Physics | Bachelor of Science</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">University of Jos</p>
+</div>
+</div>
+</section>
+<!-- Certifications -->
+<section class="mb-32">
+<h2 class="font-headline-lg text-headline-lg text-brand-teal mb-16 border-b border-border-subtle pb-4">Certifications</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-8 rounded-lg flex flex-col gap-4 h-full">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">12/2023 — 12/2023</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">AWS Cloud Practitioner</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Amazon Web Services</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-4 h-full">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">01/2021 — 02/2021</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Innovation for Entrepreneurs</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">University of Maryland</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-4 h-full">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">03/2026 — 03/2026</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">AI Engineer Core Track</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Udemy</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-4 h-full">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">03/2026 — 03/2026</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">AI for Leaders</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Udemy</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg flex flex-col gap-4 h-full">
+<div class="md:w-1/4">
+<p class="font-label-md text-label-md text-text-muted">10/2025 — 10/2025</p>
+</div>
+<div class="md:w-3/4 space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Machine Learning</h3>
+<p class="font-label-sm text-label-sm text-brand-teal uppercase tracking-widest">Stanford University</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-deep border-t border-border-subtle mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto gap-8">
+<div class="font-headline-md text-headline-md text-on-surface">Ibrahim</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-text-muted hover:text-brand-teal transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-brand-teal transition-colors" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-brand-teal transition-colors" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-text-muted hover:text-brand-teal transition-colors" href="#">Email</a>
+</div>
+<div class="font-body-md text-body-md text-text-muted">© 2024 Ibrahim. Built with precision.</div>
+</div>
+</footer>
+
+
+</body></html>

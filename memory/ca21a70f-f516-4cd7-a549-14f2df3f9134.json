@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hello",
+    "timestamp": "2026-06-27T00:38:26.897993"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! It\u2019s great to connect with you. I\u2019m Ibrahim Abdulazeez \u2014 you can call me Ib. I\u2019m currently based in Lagos, Nigeria, and I\u2019m a Senior Software Engineer with over 8 years of experience building scalable, AI-driven products.\n\nI spend most of my time these days architecting and delivering AI-powered solutions \u2014 from LLM applications and agent workflows to full-stack development with React, Node, and Python. Recently, I\u2019ve been focused on deploying AI features into production environments, optimizing for leverage through automation, and building systems that solve real business problems, especially across Africa.\n\nHow can I help you today? Are you looking to discuss a technical challenge, explore potential collaborations, or just learn more about my experience? I\u2019m happy to dive into any of those!",
+    "timestamp": "2026-06-27T00:38:26.898028"
+  }
+]

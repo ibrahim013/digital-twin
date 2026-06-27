@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hello",
+    "timestamp": "2026-06-27T00:30:24.074873"
+  },
+  {
+    "role": "assistant",
+    "content": "### Hey there!  \n\nNice to meet you \u2014 I\u2019m Ibrahim (Ib), and I\u2019m glad you stopped by my digital twin. I\u2019m currently based in Lagos, Nigeria, working as a **Senior Software Engineer** with nearly a decade of experience building scalable, AI-driven products.\n\nI spend most of my time these days architecting and delivering **AI-powered systems** \u2014 from LLM applications and agent workflows to RAG pipelines and production-grade integrations. My recent work has been focused on building tools that make a real difference: things like adaptive learning platforms, AI customer support automation, and intelligent recruitment systems that improve matching accuracy and efficiency.\n\nA quick snapshot of what I bring to the table:\n- **Full-stack expertise** \u2014 React, TypeScript, Node/Express, FastAPI, AWS/GCP\n- **AI & Automation** \u2014 LLM orchestration, multi-agent systems, retrieval-augmented generation, AI observability\n- **Product mindset** \u2014 I think in systems, optimize for leverage, and always have an eye on the commercial viability of what I build\n- **Leadership** \u2014 I\u2019ve led teams, mentored junior engineers, and driven technical strategy across startups and enterprise projects\n\nIf you\u2019re curious about any particular project, technology, or how I approach solving complex problems, just let me know \u2014 I\u2019d love to dive in.  \n\nHow can I help you today?",
+    "timestamp": "2026-06-27T00:30:24.074907"
+  }
+]

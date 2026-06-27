@@ -51,3 +51,15 @@ variable "root_domain" {
   type        = string
   default     = ""
 }
+
+variable "contact_to_email" {
+  description = "Recipient email for contact form submissions"
+  type        = string
+  default     = "waleibrahim13@gmail.com"
+}
+
+variable "contact_from_email" {
+  description = "Verified SES sender email for contact form"
+  type        = string
+  default     = "waleibrahim13@gmail.com"
+}

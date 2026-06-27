@@ -119,6 +119,27 @@ resource "aws_iam_role_policy_attachment" "lambda_s3" {
   role       = aws_iam_role.lambda_role.name
 }
 
+resource "aws_iam_role_policy" "lambda_ses" {
+  name = "${local.name_prefix}-lambda-ses"
+  role = aws_iam_role.lambda_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "ses:SendEmail",
+          "ses:SendRawEmail",
+        ]
+        Resource = "arn:aws:ses:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:identity/${var.contact_from_email}"
+      },
+    ]
+  })
+}
+
+data "aws_region" "current" {}
+
 # Lambda function
 resource "aws_lambda_function" "api" {
   filename         = "${path.module}/../backend/lambda-deployment.zip"
@@ -133,10 +154,13 @@ resource "aws_lambda_function" "api" {
 
   environment {
     variables = {
-      CORS_ORIGINS     = var.use_custom_domain ? "https://${var.root_domain},https://www.${var.root_domain}" : "https://${aws_cloudfront_distribution.main.domain_name}"
-      S3_BUCKET        = aws_s3_bucket.memory.id
-      USE_S3           = "true"
-      BEDROCK_MODEL_ID = var.bedrock_model_id
+      CORS_ORIGINS       = var.use_custom_domain ? "https://${var.root_domain},https://www.${var.root_domain}" : "https://${aws_cloudfront_distribution.main.domain_name}"
+      S3_BUCKET          = aws_s3_bucket.memory.id
+      USE_S3             = "true"
+      BEDROCK_MODEL_ID   = var.bedrock_model_id
+      CONTACT_TO_EMAIL   = var.contact_to_email
+      CONTACT_FROM_EMAIL = var.contact_from_email
+      DEFAULT_AWS_REGION = data.aws_region.current.region
     }
   }
 
@@ -190,6 +214,12 @@ resource "aws_apigatewayv2_route" "post_chat" {
   target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
 }
 
+resource "aws_apigatewayv2_route" "post_contact" {
+  api_id    = aws_apigatewayv2_api.main.id
+  route_key = "POST /contact"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
+}
+
 resource "aws_apigatewayv2_route" "get_health" {
   api_id    = aws_apigatewayv2_api.main.id
   route_key = "GET /health"
@@ -208,7 +238,7 @@ resource "aws_lambda_permission" "api_gw" {
 # CloudFront distribution
 resource "aws_cloudfront_distribution" "main" {
   aliases = local.aliases
-  
+
   viewer_certificate {
     acm_certificate_arn            = var.use_custom_domain ? aws_acm_certificate.site[0].arn : null
     cloudfront_default_certificate = var.use_custom_domain ? false : true
