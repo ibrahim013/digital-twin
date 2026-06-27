@@ -32,3 +32,13 @@ output "lambda_function_name" {
   description = "Name of the Lambda function"
   value       = aws_lambda_function.api.function_name
 }
+
+output "lambda_log_group" {
+  description = "CloudWatch log group for Lambda API"
+  value       = aws_cloudwatch_log_group.lambda.name
+}
+
+output "bedrock_log_group" {
+  description = "CloudWatch log group for Bedrock model invocations"
+  value       = aws_cloudwatch_log_group.bedrock.name
+}

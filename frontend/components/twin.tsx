@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Cpu, User, Settings, Terminal } from 'lucide-react';
 import MarkdownMessage from '@/components/markdown-message';
+import { trackChatEvent } from '@/lib/analytics';
 
 interface Message {
   id: string;
@@ -44,9 +45,17 @@ export default function Twin() {
       timestamp: new Date(),
     };
 
+    const isNewSession = !sessionId;
+
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+
+    trackChatEvent('message_sent', {
+      message_length: userMessage.content.length,
+      is_new_session: isNewSession,
+      session_id: sessionId || undefined,
+    });
 
     try {
       const response = await fetch(
@@ -67,6 +76,7 @@ export default function Twin() {
 
       if (!sessionId) {
         setSessionId(data.session_id);
+        trackChatEvent('session_started', { session_id: data.session_id });
       }
 
       const assistantMessage: Message = {
@@ -77,8 +87,17 @@ export default function Twin() {
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
+
+      trackChatEvent('response_received', {
+        session_id: data.session_id,
+        response_length: data.response.length,
+      });
     } catch (error) {
       console.error('Error:', error);
+      trackChatEvent('error', {
+        session_id: sessionId || undefined,
+        is_new_session: isNewSession,
+      });
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',

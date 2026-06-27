@@ -10,6 +10,7 @@ from datetime import datetime
 import boto3
 from botocore.exceptions import ClientError
 from context import prompt
+from tracing import BedrockTrace, log_ai_trace
 
 # Load environment variables
 load_dotenv()
@@ -120,34 +121,38 @@ def save_conversation(session_id: str, messages: List[Dict]):
             json.dump(messages, f, indent=2)
 
 
-def call_bedrock(conversation: List[Dict], user_message: str) -> str:
+def call_bedrock(conversation: List[Dict], user_message: str, session_id: str) -> str:
     """Call AWS Bedrock with conversation history"""
-    
+    trace = BedrockTrace(session_id=session_id, model_id=BEDROCK_MODEL_ID)
+    trace.log_start(
+        history_length=len(conversation),
+        user_message_length=len(user_message),
+    )
+
     # Build messages in Bedrock format
     messages = []
-    
+
     # Add system prompt as first user message
     # Or there's a better way to do this - pass in system=[{"text": prompt()}] to the converse call below
     messages.append({
-        "role": "user", 
+        "role": "user",
         "content": [{"text": f"System: {prompt()}"}]
     })
-    
+
     # Add conversation history (limit to last 25 exchanges)
     for msg in conversation[-50:]:
         messages.append({
             "role": msg["role"],
             "content": [{"text": msg["content"]}]
         })
-    
+
     # Add current user message
     messages.append({
         "role": "user",
         "content": [{"text": user_message}]
     })
-    
+
     try:
-        # Call Bedrock using the converse API
         response = bedrock_client.converse(
             modelId=BEDROCK_MODEL_ID,
             messages=messages,
@@ -157,21 +162,27 @@ def call_bedrock(conversation: List[Dict], user_message: str) -> str:
                 "topP": 0.9
             }
         )
-        
-        # Extract the response text
-        return response["output"]["message"]["content"][0]["text"]
-        
+
+        text = response["output"]["message"]["content"][0]["text"]
+        usage = response.get("usage", {})
+        stop_reason = response.get("output", {}).get("message", {}).get("stopReason")
+        trace.log_success(
+            usage=usage,
+            response_length=len(text),
+            stop_reason=stop_reason,
+        )
+        return text
+
     except ClientError as e:
         error_code = e.response['Error']['Code']
+        error_message = e.response['Error'].get('Message', str(e))
+        trace.log_error(error_code=error_code, error_message=error_message)
+
         if error_code == 'ValidationException':
-            # Handle message format issues
-            print(f"Bedrock validation error: {e}")
             raise HTTPException(status_code=400, detail="Invalid message format for Bedrock")
         elif error_code == 'AccessDeniedException':
-            print(f"Bedrock access denied: {e}")
             raise HTTPException(status_code=403, detail="Access denied to Bedrock model")
         else:
-            print(f"Bedrock error: {e}")
             raise HTTPException(status_code=500, detail=f"Bedrock error: {str(e)}")
 
 
@@ -239,14 +250,18 @@ async def contact(request: ContactRequest):
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     try:
-        # Generate session ID if not provided
         session_id = request.session_id or str(uuid.uuid4())
+        is_new_session = request.session_id is None
 
-        # Load conversation history
+        log_ai_trace(
+            "chat_request",
+            session_id=session_id,
+            is_new_session=is_new_session,
+            message_length=len(request.message),
+        )
+
         conversation = load_conversation(session_id)
-
-        # Call Bedrock for response
-        assistant_response = call_bedrock(conversation, request.message)
+        assistant_response = call_bedrock(conversation, request.message, session_id)
 
         # Update conversation history
         conversation.append(
@@ -263,12 +278,23 @@ async def chat(request: ChatRequest):
         # Save conversation
         save_conversation(session_id, conversation)
 
+        log_ai_trace(
+            "chat_response",
+            session_id=session_id,
+            response_length=len(assistant_response),
+            conversation_length=len(conversation),
+        )
+
         return ChatResponse(response=assistant_response, session_id=session_id)
 
     except HTTPException:
         raise
     except Exception as e:
-        print(f"Error in chat endpoint: {str(e)}")
+        log_ai_trace(
+            "chat_error",
+            session_id=request.session_id or "unknown",
+            error_message=str(e),
+        )
         raise HTTPException(status_code=500, detail=str(e))
 
 

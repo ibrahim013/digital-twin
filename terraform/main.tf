@@ -140,6 +140,74 @@ resource "aws_iam_role_policy" "lambda_ses" {
 
 data "aws_region" "current" {}
 
+# Lambda CloudWatch logs
+resource "aws_cloudwatch_log_group" "lambda" {
+  name              = "/aws/lambda/${local.name_prefix}-api"
+  retention_in_days = 14
+  tags              = local.common_tags
+}
+
+# Bedrock model invocation logging
+resource "aws_cloudwatch_log_group" "bedrock" {
+  name              = "/aws/bedrock/${local.name_prefix}-model-invocations"
+  retention_in_days = 14
+  tags              = local.common_tags
+}
+
+resource "aws_iam_role" "bedrock_logging" {
+  name = "${local.name_prefix}-bedrock-logging"
+  tags = local.common_tags
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "bedrock.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
+      },
+    ]
+  })
+}
+
+resource "aws_iam_role_policy" "bedrock_logging" {
+  name = "${local.name_prefix}-bedrock-logging"
+  role = aws_iam_role.bedrock_logging.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+        ]
+        Resource = "${aws_cloudwatch_log_group.bedrock.arn}:*"
+      },
+    ]
+  })
+}
+
+resource "aws_bedrock_model_invocation_logging_configuration" "main" {
+  logging_config {
+    cloudwatch_config {
+      log_group_name = aws_cloudwatch_log_group.bedrock.name
+      role_arn       = aws_iam_role.bedrock_logging.arn
+    }
+    embedding_data_delivery_enabled = false
+    image_data_delivery_enabled     = false
+    text_data_delivery_enabled      = true
+  }
+
+  depends_on = [
+    aws_iam_role_policy.bedrock_logging,
+    aws_cloudwatch_log_group.bedrock,
+  ]
+}
+
 # Lambda function
 resource "aws_lambda_function" "api" {
   filename         = "${path.module}/../backend/lambda-deployment.zip"
@@ -164,8 +232,11 @@ resource "aws_lambda_function" "api" {
     }
   }
 
-  # Ensure Lambda waits for the distribution to exist
-  depends_on = [aws_cloudfront_distribution.main]
+  # Ensure Lambda waits for the distribution and log group to exist
+  depends_on = [
+    aws_cloudfront_distribution.main,
+    aws_cloudwatch_log_group.lambda,
+  ]
 }
 
 # API Gateway HTTP API
